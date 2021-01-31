@@ -1,0 +1,3 @@
+
+CREDIT_LABEL = 'CR'
+DEBIT_LABEL = 'DB'
