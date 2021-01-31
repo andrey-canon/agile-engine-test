@@ -1,10 +1,12 @@
+"""Views file"""
 from django.http import HttpResponse
 from django.template import loader
 
-from apps.accounting.models import Transaction, Account
+from apps.accounting.models import Account, Transaction
 
 
 def index(request):
+    """Main view, show the user transactions"""
     user = request.user
     user = user if user.is_authenticated else None
     account, _ = Account.objects.get_or_create(user=user)

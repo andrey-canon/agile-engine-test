@@ -1,5 +1,4 @@
-"""
-"""
+"""Accounting urls"""
 from django.urls import include, path
 
 from apps.accounting.api import urls

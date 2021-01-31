@@ -1,12 +1,12 @@
-"""
-"""
-from django.db import models
+"""Model file"""
 from django.contrib.auth.models import User
+from django.db import models
+
 from apps.accounting.constants import CREDIT_LABEL, DEBIT_LABEL
 
 
 class Account(models.Model):
-    """docstring for Trans"""
+    """Account Model"""
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     created = models.DateTimeField(auto_now=True)
@@ -15,7 +15,7 @@ class Account(models.Model):
 
 
 class Transaction(models.Model):
-    """docstring for Trans"""
+    """Transaction Model"""
 
     TRANSACTION_TYPES = [
         (CREDIT_LABEL, "Credit"),

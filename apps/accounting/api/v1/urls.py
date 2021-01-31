@@ -1,5 +1,4 @@
-"""
-"""
+"""Api v1 urls."""
 from django.urls import include, path
 
 from apps.accounting.api.v1.routers import router

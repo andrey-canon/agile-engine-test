@@ -1,8 +1,9 @@
-from rest_framework import serializers
+"""Serializer file"""
 from crum import get_current_user
+from rest_framework import serializers
 
-from apps.accounting.models import Transaction, Account
 from apps.accounting.constants import CREDIT_LABEL, DEBIT_LABEL
+from apps.accounting.models import Account, Transaction
 
 
 class TransactionsSerializer(serializers.ModelSerializer):
@@ -10,7 +11,7 @@ class TransactionsSerializer(serializers.ModelSerializer):
     Serializer class for Trasaction.
     """
 
-    class Meta(object):
+    class Meta:
         """
         Define the model and the allowed fields.
         """
@@ -34,6 +35,7 @@ class TransactionsSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         """
+        Create transaction for an account.
         """
         account = self._get_current_account()
         amount = validated_data.get('amount', 0)

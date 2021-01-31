@@ -1,9 +1,7 @@
-"""
-"""
+"""Api urls file"""
 from django.urls import include, path
 
 from apps.accounting.api.v1 import urls
-
 
 app_name = 'accounting'
 
